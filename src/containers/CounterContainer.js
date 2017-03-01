@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { increment } from '../actions/counter';
+import { increment, multiply } from '../actions/counter';
 import Counter from '../components/Counter';
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,6 +15,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         addTwo: () => {
             dispatch(increment(2));
+        },
+        double: () => {
+            dispatch(multiply(2));
+        },
+        triple: () => {
+            dispatch(multiply(3));
         }
     };
 };
