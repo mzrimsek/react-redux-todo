@@ -1,16 +1,13 @@
 import React from 'react';
-import Footer from './Footer';
-import AddTodo from '../containers/AddTodo';
-import VisibleTodoList from '../containers/VisibleTodoList';
+import { Router, Route, browserHistory } from 'react-router';
+import Todos from '../layouts/Todos';
 import CounterContainer from '../containers/CounterContainer';
 
 const App = () => (
-    <div>
-        <AddTodo />
-        <VisibleTodoList />
-        <Footer />
-        <CounterContainer />
-    </div>
+    <Router history={browserHistory}>
+        <Route path="/" component={Todos} />
+        <Route path="/counter" component={CounterContainer} />
+    </Router>
 );
 
 export default App;
